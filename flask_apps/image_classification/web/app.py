@@ -16,7 +16,7 @@ db = client.IRG
 users = db["Users"]
 
 def UserExist(username):
-    if users.find({"Username":username}).count() == 0:
+    if users.count_documents({"Username": username}) == 0:
         return False
     else:
         return True
